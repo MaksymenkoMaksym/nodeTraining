@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+
 const contactsPath = path.resolve('./db/contacts.json')
 
 const read = async () => {
@@ -24,7 +25,6 @@ async function listContacts() {
 }
 
 async function getContactById(contactId) {
-  console.log(typeof contactId, 'contactId')
   try {
     const dataArray = await read()
     const contact = dataArray.find((el) => el.id === contactId)

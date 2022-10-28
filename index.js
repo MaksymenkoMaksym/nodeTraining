@@ -1,4 +1,5 @@
 import Yargs from 'yargs'
+import { Command } from 'commander'
 
 import {
   addContact,
@@ -6,7 +7,7 @@ import {
   getContactById,
   listContacts,
 } from './contacts.js'
-
+// 1st approach to solve problem via Yargs
 const argv = Yargs(process.argv.slice(2)).argv
 
 function invokeAction({ action, id, name, email, phone }) {
@@ -32,8 +33,8 @@ function invokeAction({ action, id, name, email, phone }) {
   }
 }
 // invokeAction(argv)
+// 2nd approach to solve problem via Commander
 
-import { Command } from 'commander'
 const program = new Command()
 program
   .option('-a, --action <type>', 'choose action')
